@@ -1,0 +1,12 @@
+{
+  "name": "Donor",
+  "displayName": "Donor",
+  "expo": {
+    "name": "Donor",
+    "slug": "Donor",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
