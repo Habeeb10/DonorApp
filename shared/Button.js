@@ -1,25 +1,19 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-export const Button = ({
-  title,
-  onPress,
-  style,
-  titleStyle
-}) => {
+export const Button = ({ title, onPress, style, titleStyle }) => {
   return (
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={0.8}
       style={[styles.container, style]}
     >
-    <Text style={[styles.button, titleStyle]}>{title}</Text>  
+      <Text style={[styles.button, titleStyle]}>{title}</Text>
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  
   container: {
     width: "80%",
     height: 60,
@@ -31,6 +25,7 @@ const styles = StyleSheet.create({
   },
   button: {
     color: "#ffffff",
-    fontSize: 22,
+    fontSize: 20,
+    fontWeight: "500",
   },
 });
