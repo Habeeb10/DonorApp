@@ -1,5 +1,13 @@
-export const Slide1= require("./Slide1.png");
+export const Slide1 = require("./Slide1.png");
 export const Slide2 = require("./Slide2.png");
 export const Logo = require("./Logo.png");
 export const Success = require("./Success.png");
 export const Together = require("./Together.png");
+export const Tube = require("./Tube.png");
+export const Pana = require("./Pana.png");
+export const Hassan = require("./Hassan.png");
+export const Sami = require("./Sami.png");
+export const Rahim = require("./Rahim.png");
+export const Rumana = require("./Rumana.png");
+export const Ahmed = require("./Ahmed.png");
+export const Fahim = require("./Fahim.png");
