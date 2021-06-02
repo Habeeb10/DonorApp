@@ -1,9 +1,10 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { View } from "react-native";
 import { BloodGroup } from "../../assets/svg";
 import { DonationCard } from "../shared/DonationCard";
 import { Header } from "../shared/Header";
+import { DonationStyles as styles } from "./Styles";
 
 const DonationList = [
   {
@@ -69,36 +70,3 @@ export default function DonationRequest({ navigation }) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  header: {
-    marginRight: 60,
-  },
-  box: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    paddingHorizontal: 25,
-  },
-  but: {
-    marginTop: 20,
-  },
-  success: {
-    width: 230,
-    height: 230,
-    resizeMode: "contain",
-    alignSelf: "center",
-    marginTop: 100,
-  },
-  code: {
-    fontSize: 16,
-    fontWeight: "500",
-    lineHeight: 26,
-    color: "#FF2156",
-    marginLeft: 260,
-    marginBottom: 10,
-  },
-  container: {
-    flex: 1,
-  },
-});
