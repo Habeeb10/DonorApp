@@ -1,7 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { Together } from "../../assets/images";
+import { HomeStyles as styles } from "./Styles";
 import {
   Apps,
   Assistant,
@@ -60,35 +61,3 @@ export default function Home({ navigation }) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  request: {
-    fontWeight: "500",
-    fontSize: 16,
-    lineHeight: 26,
-    color: "#272A2F",
-    marginTop: 40,
-    marginLeft: 30,
-  },
-  box: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    paddingHorizontal: 25,
-  },
-  iconbox: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: 60,
-    paddingHorizontal: 30,
-  },
-  success: {
-    width: 300,
-    height: 250,
-    resizeMode: "contain",
-    alignSelf: "center",
-  },
-  container: {
-    flex: 1,
-  },
-});

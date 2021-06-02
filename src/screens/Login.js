@@ -1,10 +1,11 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { Logo } from "../../assets/images";
 import { Button } from "../shared/Button";
 import { Fillinput } from "../shared/Fillinput";
 import { Lock, Message } from "../../assets/svg";
+import { LoginStyles as styles } from "./Styles";
 
 export default function Login({ navigation }) {
   return (
@@ -47,49 +48,3 @@ export default function Login({ navigation }) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  account: {
-    fontSize: 18,
-    fontWeight: "500",
-    color: "#7E7E7E",
-  },
-  register: {
-    fontSize: 18,
-    fontWeight: "500",
-    color: "#FF2156",
-  },
-  registerbox: {
-    flexDirection: "row",
-    marginTop: 70,
-    paddingHorizontal: 40,
-  },
-  password: {
-    marginTop: 30,
-    textAlign: "center",
-    color: "#FF2156",
-    fontSize: 18,
-    fontWeight: "400",
-  },
-  button: {
-    marginTop: 80,
-    width: "90%",
-  },
-  box: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    marginLeft: 20,
-    marginBottom: 60,
-  },
-  logo: {
-    width: 150,
-    height: 150,
-    resizeMode: "contain",
-    alignSelf: "center",
-    marginTop: 70,
-  },
-  container: {
-    flex: 1,
-  },
-});
