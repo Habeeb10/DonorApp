@@ -1,13 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  Image,
-  Switch,
-} from "react-native";
+import { Text, TouchableOpacity, View, Image, Switch } from "react-native";
 import { Header } from "../shared/Header";
 import {
   Call,
@@ -21,6 +14,7 @@ import {
 } from "../../assets/svg";
 import { Fahim } from "../../assets/images";
 import { ProfileCard } from "../shared/ProfileCard";
+import { ProfileStyles as styles } from "./Styles";
 
 const ProfileList = [
   {
@@ -95,96 +89,3 @@ export default function Profile({ navigation }) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  box: {
-    flexDirection: "row",
-  },
-  blood: {
-    fontSize: 10,
-    color: "#7C7C7C",
-    fontWeight: "500",
-    lineHeight: 26,
-  },
-  group: {
-    fontSize: 30,
-    color: "#272A2F",
-  },
-  groupbox: {
-    width: 102,
-    height: 102,
-    backgroundColor: "#FFFFFF",
-    borderRadius: 10,
-    marginTop: 35,
-    marginLeft: 20,
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: 10,
-  },
-  text: {
-    fontWeight: "500",
-    fontSize: 16,
-    lineHeight: 24,
-    color: "#FFFFFF",
-    marginLeft: 10,
-  },
-  requestbox: {
-    flexDirection: "row",
-    width: 158,
-    height: 45,
-    backgroundColor: "#FF2156",
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 10,
-  },
-  callbox: {
-    flexDirection: "row",
-    width: 158,
-    height: 45,
-    backgroundColor: "#689593",
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 10,
-  },
-  deskbox: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: 31,
-    paddingHorizontal: 25,
-  },
-  bangladesh: {
-    color: "#7C7C7C",
-    fontSize: 12,
-    fontWeight: "400",
-  },
-  locationbox: {
-    flexDirection: "row",
-    alignSelf: "center",
-    marginTop: 15,
-    alignItems: "center",
-  },
-  fahim: {
-    color: "#272A2F",
-    fontWeight: "500",
-    fontSize: 30,
-    textAlign: "center",
-    marginTop: 25,
-  },
-  fahimekan: {
-    width: 89,
-    height: 89,
-    alignSelf: "center",
-    marginTop: 15,
-  },
-  contbox1: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  header: {
-    marginLeft: 110,
-  },
-  container: {
-    flex: 1,
-  },
-});
