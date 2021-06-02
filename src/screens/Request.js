@@ -31,8 +31,8 @@ export default function Request({ navigation }) {
       <Button
         title="Request"
         style={styles.button}
-        // onPress={() => setModalState(true)}
-        onPress={() => navigation.navigate("finddonor")}
+        onPress={() => setModalState(true)}
+        // onPress={() => navigation.navigate("finddonor")}
       />
       {modalState && (
         <View style={styles.modalContainer}>
