@@ -14,6 +14,7 @@ import {
   SearchIcon,
 } from "../../assets/svg";
 import { DonorCard } from "../shared/DonorCard";
+import { FindDonorStyles as styles } from "./Styles";
 
 const DonorList = [
   {
@@ -97,29 +98,3 @@ export default function FindDonor({ navigation }) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  base: {
-    // backgroundColor: "#E5E5E5",
-    // flexDirection: "row",
-    // height: 100,
-    // alignItems: "center",
-    // justifyContent: "space-between",
-    // paddingRight: 30,
-  },
-  searchbox: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: 10,
-  },
-
-  head: {
-    marginRight: 140,
-    fontSize: 17,
-  },
-
-  container: {
-    flex: 1,
-  },
-});
