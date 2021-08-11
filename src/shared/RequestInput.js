@@ -1,11 +1,16 @@
 import React from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 
-export const RequestInput = ({ placeholder, icon }) => {
+export const RequestInput = ({ placeholder, icon, value, onchange }) => {
   return (
     <View style={styles.container}>
       <View style={{ width: 30 }}>{icon}</View>
-      <TextInput style={styles.textInput} placeholder={placeholder} />
+      <TextInput
+        style={styles.textInput}
+        placeholder={placeholder}
+        onChangeText={onchange}
+        value={value}
+      />
     </View>
   );
 };

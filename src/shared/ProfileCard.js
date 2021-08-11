@@ -1,12 +1,18 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export const ProfileCard = ({ onPress, icon, title, toggle }) => {
   return (
     <View>
       <View onPress={onPress} style={styles.normal}>
-        <View>{icon}</View>
-        <Text style={styles.title}>{title}</Text>
+        <TouchableOpacity
+          style={{ flexDirection: "row", alignItems: "center" }}
+        >
+          <View>{icon}</View>
+          <Text style={styles.title}>{title}</Text>
+        </TouchableOpacity>
+
         <View
           style={{
             marginLeft: 110,

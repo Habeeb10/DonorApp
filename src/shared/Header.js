@@ -2,10 +2,10 @@ import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Back } from "../../assets/svg";
 
-export const Header = ({ icon, title, onpress, headerStyle }) => {
+export const Header = ({ icon, title, onPress, headerStyle }) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onpress={onpress} style={styles.touch}>
+      <TouchableOpacity onPress={onPress} style={styles.touch}>
         {(icon = <Back />)}
       </TouchableOpacity>
       <Text style={[styles.title, headerStyle]}>{title}</Text>
