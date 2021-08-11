@@ -1,12 +1,30 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
+import { Alert, Image, StyleSheet, Text, View } from "react-native";
 import { Logo } from "../../assets/images";
 import { Button } from "../shared/Button";
 import { Fillinput } from "../shared/Fillinput";
 import User, { Blood, Location, Lock, Message, Phone } from "../../assets/svg";
 
 export default function Register({ navigation }) {
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [phonenumber, setPhonumber] = useState("");
+  const [location, setLocation] = useState("");
+  const [bloodgroup, setBloodgroup] = useState("");
+  const handleRegister = () => {
+    if (
+      !email ||
+      !username ||
+      !password ||
+      !phonenumber ||
+      !location ||
+      !bloodgroup
+    ) {
+      return Alert.alert("Warning", "Fill in your details");
+    } else navigation.navigate("login");
+  };
   return (
     <View stytle={styles.container}>
       <StatusBar style={"dark"} />
@@ -22,18 +40,47 @@ export default function Register({ navigation }) {
           Donate
         </Text>
       </View>
-      <Fillinput icon={<User />} placeholder="Fahim Ekan" />
-      <Fillinput icon={<Message />} placeholder="Fahimekan28@gmail.com" />
-      <Fillinput icon={<Lock />} placeholder="********" />
-      <Fillinput icon={<Phone />} placeholder="+8801628162522" />
-      <Fillinput icon={<Blood />} placeholder="O+" />
-      <Fillinput icon={<Location />} placeholder="Chittagong, BD." />
-      <Button title="REGISTER" style={styles.button} />
+      <Fillinput
+        icon={<User />}
+        placeholder="Fahim Ekan"
+        value={username}
+        onchange={setUsername}
+      />
+      <Fillinput
+        icon={<Message />}
+        placeholder="Fahimekan28@gmail.com"
+        value={email}
+        onchange={setEmail}
+      />
+      <Fillinput
+        icon={<Lock />}
+        placeholder="******"
+        value={password}
+        onchange={setPassword}
+      />
+      <Fillinput
+        icon={<Phone />}
+        placeholder="+8801628162522"
+        value={phonenumber}
+        onchange={setPhonumber}
+      />
+      <Fillinput
+        icon={<Blood />}
+        placeholder="O+"
+        value={bloodgroup}
+        onchange={setBloodgroup}
+      />
+      <Fillinput
+        icon={<Location />}
+        placeholder="Chittagong, BD."
+        value={location}
+        onchange={setLocation}
+      />
+      <Button title="REGISTER" style={styles.button} onPress={handleRegister} />
       <View style={styles.registerbox}>
         <Text style={styles.account}>Already have an account?</Text>
         <Text
           style={styles.register}
-          onPress={() => navigation.navigate("register")}
           onPress={() => navigation.navigate("login")}
         >
           Log in.
