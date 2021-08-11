@@ -12,7 +12,7 @@ export default function Finish({ navigation }) {
       <Button
         title="Finish"
         style={styles.but}
-        onPress={() => navigation.navigate("home")}
+        onPress={() => navigation.navigate("login")}
       />
     </View>
   );

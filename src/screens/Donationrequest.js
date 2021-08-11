@@ -49,7 +49,11 @@ export default function DonationRequest({ navigation }) {
   return (
     <View stytle={styles.container}>
       <StatusBar style={"dark"} />
-      <Header title="Donation Request" headerStyle={styles.header} />
+      <Header
+        title="Donation Request"
+        headerStyle={styles.header}
+        onPress={() => navigation.navigate("home")}
+      />
       <View style={styles.box}>
         {DonationList.map((item, index) => {
           return (
@@ -62,7 +66,7 @@ export default function DonationRequest({ navigation }) {
               place={item.place}
               time={item.time}
               donate={item.donate}
-              onPress={() => navigation.navigate("search")}
+              onPress={() => navigation.navigate("report")}
             />
           );
         })}

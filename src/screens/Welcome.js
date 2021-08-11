@@ -51,7 +51,7 @@ export default function Welcome({ navigation }) {
       <AppIntroSlider
         renderItem={_renderItem}
         data={slides}
-        dotStyle={{ backgroundColor: "black" }}
+        dotStyle={{ backgroundColor: "#E0E0E0" }}
         activeDotStyle={{ backgroundColor: "#FF2156", width: 30 }}
         onDone={() => navigation.navigate("onboarding")}
         renderDoneButton={_renderDoneButton}
@@ -64,7 +64,7 @@ export default function Welcome({ navigation }) {
 const styles = StyleSheet.create({
   title: {
     color: "#7E7E7E",
-    width: 280,
+    width: 290,
     textAlign: "center",
     fontSize: 20,
     fontWeight: "500",
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   image: {
     width: 280,
     height: 265,
-    marginTop: 70,
+    marginTop: 100,
     resizeMode: "contain",
   },
   container: {

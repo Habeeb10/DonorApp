@@ -15,6 +15,7 @@ import MyTabs from "./TabNavigation";
 import Report from "../screens/Report";
 import Assistant from "../screens/Assistant";
 import Request from "../screens/Request";
+import Splashscreen from "../screens/splash/splash";
 
 const Stack = createStackNavigator();
 

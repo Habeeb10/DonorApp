@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { Image, Text, View } from "react-native";
+import React, { useState } from "react";
+import { Alert, Image, Text, View } from "react-native";
 import { Logo } from "../../assets/images";
 import { Button } from "../shared/Button";
 import { Fillinput } from "../shared/Fillinput";
@@ -8,6 +8,13 @@ import { Lock, Message } from "../../assets/svg";
 import { LoginStyles as styles } from "./Styles";
 
 export default function Login({ navigation }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleLogin = () => {
+    if (!email || !password) {
+      return Alert.alert("Warning", "Enter your details");
+    } else navigation.navigate("home");
+  };
   return (
     <View stytle={styles.container}>
       <StatusBar style={"dark"} />
@@ -23,13 +30,19 @@ export default function Login({ navigation }) {
           Donate
         </Text>
       </View>
-      <Fillinput icon={<Message />} placeholder="Fahimekan28@gmail.com" />
-      <Fillinput icon={<Lock />} placeholder="Fahimekan28@gmail.com" />
-      <Button
-        title="LOG IN"
-        style={styles.button}
-        onPress={() => navigation.navigate("home")}
+      <Fillinput
+        icon={<Message />}
+        placeholder="Fahimekan28@gmail.com"
+        value={email}
+        onchange={setEmail}
       />
+      <Fillinput
+        icon={<Lock />}
+        placeholder="Fahimekan28@gmail.com"
+        value={password}
+        onchange={setPassword}
+      />
+      <Button title="LOG IN" style={styles.button} onPress={handleLogin} />
       <Text
         style={styles.password}
         onPress={() => navigation.navigate("reset")}

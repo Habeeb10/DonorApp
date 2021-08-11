@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { Image, Text, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import { Together } from "../../assets/images";
 import { HomeStyles as styles } from "./Styles";
 import {
@@ -47,17 +47,27 @@ export default function Home({ navigation }) {
     <View stytle={styles.container}>
       <StatusBar style={"dark"} />
       <View style={styles.iconbox}>
-        <Apps />
-        <Notification />
+        <TouchableOpacity>
+          <Apps onPress={() => navigation.navigate("login")} />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Notification />
+        </TouchableOpacity>
       </View>
+
       <Image source={Together} style={styles.success} />
       <View style={styles.box}>
         {HomeList.map((item, index) => {
-          return <HomeCard key={index} icon={item.icon} title={item.title} />;
+          return (
+            <HomeCard
+              key={index}
+              icon={item.icon}
+              title={item.title}
+              onpress={item.onPress}
+            />
+          );
         })}
       </View>
-      <Text style={styles.request}>Donation Request</Text>
-      <View></View>
     </View>
   );
 }

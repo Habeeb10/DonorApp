@@ -10,10 +10,14 @@ export default function Assistant({ navigation }) {
     <View stytle={styles.container}>
       <StatusBar style={"dark"} />
       <View style={styles.contbox1}>
-        <Header title="Assistant" headerStyle={styles.header} />
-        <View style={styles.logobox1}>
+        <Header
+          onPress={() => navigation.navigate("report")}
+          title="Assistant"
+          headerStyle={styles.header}
+        />
+        <TouchableOpacity style={styles.logobox1}>
           <Help />
-        </View>
+        </TouchableOpacity>
       </View>
       <View style={styles.contbox2}>
         <View style={styles.logobox}>

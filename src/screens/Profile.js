@@ -41,8 +41,14 @@ export default function Profile({ navigation }) {
     <View stytle={styles.container}>
       <StatusBar style={"dark"} />
       <View style={styles.contbox1}>
-        <Header title="Profile" headerStyle={styles.header} />
-        <Diary style={{ marginTop: 70, marginRight: 20 }} />
+        <Header
+          title="Profile"
+          headerStyle={styles.header}
+          onPress={() => navigation.navigate("home")}
+        />
+        <TouchableOpacity>
+          <Diary style={{ marginTop: 70, marginRight: 20 }} />
+        </TouchableOpacity>
       </View>
       <Image resizeMode="contain" source={Fahim} style={styles.fahimekan} />
       <Text style={styles.fahim}>Fahim Ekan</Text>
@@ -61,18 +67,18 @@ export default function Profile({ navigation }) {
         </TouchableOpacity>
       </View>
       <View style={styles.box}>
-        <View style={styles.groupbox}>
+        <TouchableOpacity style={styles.groupbox}>
           <Text style={styles.group}>A+</Text>
           <Text style={styles.blood}>Blood Type</Text>
-        </View>
-        <View style={styles.groupbox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.groupbox}>
           <Text style={styles.group}>05</Text>
           <Text style={styles.blood}>Donated</Text>
-        </View>
-        <View style={styles.groupbox}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.groupbox}>
           <Text style={styles.group}>02</Text>
           <Text style={styles.blood}>Requested</Text>
-        </View>
+        </TouchableOpacity>
       </View>
       <View>
         {ProfileList.map((item, index) => {
