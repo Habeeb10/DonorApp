@@ -216,7 +216,7 @@ export const FinishStyles = StyleSheet.create({
     height: 230,
     resizeMode: "contain",
     alignSelf: "center",
-    marginTop: 100,
+    marginTop: 150,
   },
   code: {
     fontSize: 16,
@@ -257,6 +257,7 @@ export const HomeStyles = StyleSheet.create({
     height: 250,
     resizeMode: "contain",
     alignSelf: "center",
+    marginTop: 30,
   },
   container: {
     flex: 1,
@@ -302,7 +303,7 @@ export const LoginStyles = StyleSheet.create({
     height: 150,
     resizeMode: "contain",
     alignSelf: "center",
-    marginTop: 70,
+    marginTop: 120,
   },
   container: {
     flex: 1,
@@ -343,7 +344,7 @@ export const OnboardingStyles = StyleSheet.create({
     height: 200,
     resizeMode: "contain",
     alignSelf: "center",
-    marginTop: 70,
+    marginTop: 200,
   },
   container: {
     flex: 1,

@@ -1,7 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { useState } from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Alert,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import {
   Blood,
   Hospital,
@@ -17,23 +24,58 @@ import { Pana } from "../../assets/images";
 
 export default function Request({ navigation }) {
   const [modalState, setModalState] = useState(false);
+  const [city, setCity] = useState("");
+  const [hospital, setHospital] = useState("");
+  const [bloodtype, setBloodtype] = useState("");
+  const [phonenumber, setPhonumber] = useState("");
+  const [note, setNote] = useState("");
+
+  const handleRequest = () => {
+    if (!city || !hospital || !bloodtype || !phonenumber || !note) {
+      return Alert.alert("Warning", "Fill in your details");
+    } else setModalState(true);
+  };
   return (
     <View stytle={styles.container}>
       <StatusBar style={"dark"} />
       <View style={styles.contbox}>
-        <Header title="Create A Request" headerStyle={styles.header} />
+        <Header
+          onPress={() => navigation.navigate("assistant")}
+          title="Create A Request"
+          headerStyle={styles.header}
+        />
       </View>
-      <RequestInput icon={<Location />} placeholder="City" />
-      <RequestInput icon={<Hospital />} placeholder="Hospital" />
-      <RequestInput icon={<Blood />} placeholder="Blood Type" />
-      <RequestInput icon={<Phone />} placeholder="Mobile" />
-      <RequestInput icon={<Note />} placeholder="Add a note" />
-      <Button
-        title="Request"
-        style={styles.button}
-        onPress={() => setModalState(true)}
-        // onPress={() => navigation.navigate("finddonor")}
+      <RequestInput
+        icon={<Location />}
+        placeholder="City"
+        value={city}
+        onchange={setCity}
       />
+      <RequestInput
+        icon={<Hospital />}
+        placeholder="Hospital"
+        value={hospital}
+        onchange={setHospital}
+      />
+      <RequestInput
+        icon={<Blood />}
+        placeholder="Blood Type"
+        value={bloodtype}
+        onchange={setBloodtype}
+      />
+      <RequestInput
+        icon={<Phone />}
+        placeholder="Mobile"
+        value={phonenumber}
+        onchange={setPhonumber}
+      />
+      <RequestInput
+        icon={<Note />}
+        placeholder="Add a note"
+        value={note}
+        onchange={setNote}
+      />
+      <Button title="Request" style={styles.button} onPress={handleRequest} />
       {modalState && (
         <View style={styles.modalContainer}>
           <View style={styles.modalBox}>

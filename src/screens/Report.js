@@ -44,7 +44,11 @@ export default function Report({ navigation }) {
   return (
     <View stytle={styles.container}>
       <StatusBar style={"dark"} />
-      <Header title="Report" headerStyle={styles.head} />
+      <Header
+        onPress={() => navigation.navigate("home")}
+        title="Report"
+        headerStyle={styles.head}
+      />
       <View style={styles.locationbox}>
         <Location />
         <Text style={styles.center}>Reseach Center</Text>

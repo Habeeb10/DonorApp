@@ -1,10 +1,16 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
+import { Alert, StyleSheet, Text, View } from "react-native";
 import { Button } from "../shared/Button";
 import OTPInputView from "@twotalltotems/react-native-otp-input";
 
 export default function Verify({ navigation }) {
+  const [otpcode, setOtpcode] = useState("");
+  const handleVerify = () => {
+    if (!otpcode) {
+      return Alert.alert("Warning", "Enter otp sent to your phone");
+    } else navigation.navigate("finish");
+  };
   return (
     <View stytle={styles.container}>
       <StatusBar style={"dark"} />
@@ -16,18 +22,29 @@ export default function Verify({ navigation }) {
           marginTop: 150,
         }}
         pinCount={4}
+        code={otpcode}
+        onCodeChanged={setOtpcode}
+        codeInputFieldStyle={styles.underlineStyleBase}
+        onCodeFilled={(code) => {
+          console.log(`Code is ${code}, you are good to go!`);
+        }}
+        placeholderTextColor="black"
       />
       <Text style={styles.code}>Resend Code 49 Sec</Text>
-      <Button
-        title="Verify"
-        style={styles.but}
-        onPress={() => navigation.navigate("finish")}
-      />
+      <Button title="Verify" style={styles.but} onPress={handleVerify} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  underlineStyleBase: {
+    width: 50,
+    height: 45,
+    borderBottomWidth: 1,
+    color: "black",
+    fontSize: 18,
+  },
+
   code: {
     fontSize: 14,
     fontWeight: "500",

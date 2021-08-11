@@ -35,7 +35,11 @@ export default function Search({ navigation }) {
   return (
     <View stytle={styles.container}>
       <StatusBar style={"dark"} />
-      <Header title="Search" headerStyle={styles.head} />
+      <Header
+        onPress={() => navigation.navigate("home")}
+        title="Search"
+        headerStyle={styles.head}
+      />
       <View style={styles.searchbox}>
         <Searchinput
           icon={SearchIcon}
@@ -112,7 +116,7 @@ export default function Search({ navigation }) {
         <Button
           title="Apply"
           style={styles.button}
-          onPress={() => navigation.navigate("report")}
+          onPress={() => navigation.navigate("request")}
         />
       </View>
     </View>
